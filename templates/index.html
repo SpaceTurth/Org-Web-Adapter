@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Org Web Viewer</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>Org Web Viewer</h1>
+    <button id="theme-toggle" type="button" aria-label="Toggle dark mode">Dark mode</button>
+  </header>
+  <div class="layout">
+    <nav>
+      <label class="search-wrap" for="title-search">
+        <span class="search-label">Search titles</span>
+        <input id="title-search" class="search-input" type="search" placeholder="Type to filter files">
+      </label>
+      <div class="nav-actions">
+        <button id="shuffle-notes" class="shuffle-btn" type="button">Shuffle notes</button>
+        <button id="sort-backlinks" class="shuffle-btn" type="button">Sort by backlinks</button>
+        <button id="sort-created" class="shuffle-btn" type="button">Sort by created date</button>
+        <button id="jump-current" class="shuffle-btn" type="button">Jump to current note</button>
+      </div>
+      <div id="file-list">{{NAV_ITEMS}}</div>
+    </nav>
+    <main>{{MAIN_CONTENT}}</main>
+    <aside class="backlinks-pane">
+      <h3>Backlinks</h3>
+      <div class="backlinks-list">{{BACKLINKS}}</div>
+    </aside>
+  </div>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["$", "$"]],
+        displayMath: []
+      },
+      options: {
+        skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+      }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script>
+    (function () {
+      const key = "org_web_viewer_theme";
+      const body = document.body;
+      const btn = document.getElementById("theme-toggle");
+
+      function applyTheme(theme) {
+        if (theme === "dark") {
+          body.setAttribute("data-theme", "dark");
+          btn.textContent = "Light mode";
+        } else {
+          body.removeAttribute("data-theme");
+          btn.textContent = "Dark mode";
+        }
+      }
+
+      const saved = localStorage.getItem(key);
+      applyTheme(saved === "dark" ? "dark" : "light");
+
+      btn.addEventListener("click", function () {
+        const next = body.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        localStorage.setItem(key, next);
+        applyTheme(next);
+      });
+
+      const searchInput = document.getElementById("title-search");
+      const fileList = document.getElementById("file-list");
+      const shuffleNotesBtn = document.getElementById("shuffle-notes");
+      const sortBacklinksBtn = document.getElementById("sort-backlinks");
+      const sortCreatedBtn = document.getElementById("sort-created");
+      const jumpCurrentBtn = document.getElementById("jump-current");
+      const fileLinks = Array.from(document.querySelectorAll("#file-list .file-link"));
+      const activeFileLink = document.querySelector("#file-list .file-link.active");
+      searchInput.addEventListener("input", function () {
+        const query = searchInput.value.trim().toLowerCase();
+        for (const link of fileLinks) {
+          const haystack = link.getAttribute("data-search") || "";
+          link.style.display = haystack.includes(query) ? "" : "none";
+        }
+      });
+
+      function reorderLinks(links) {
+        const fragment = document.createDocumentFragment();
+        for (const link of links) {
+          fragment.appendChild(link);
+        }
+        fileList.appendChild(fragment);
+      }
+
+      jumpCurrentBtn.addEventListener("click", function () {
+        if (!activeFileLink) {
+          return;
+        }
+        activeFileLink.scrollIntoView({ block: "nearest", inline: "nearest" });
+      });
+
+      shuffleNotesBtn.addEventListener("click", function () {
+        const links = Array.from(fileList.querySelectorAll(".file-link"));
+        for (let i = links.length - 1; i > 0; i -= 1) {
+          const j = Math.floor(Math.random() * (i + 1));
+          const tmp = links[i];
+          links[i] = links[j];
+          links[j] = tmp;
+        }
+        reorderLinks(links);
+      });
+
+      sortBacklinksBtn.addEventListener("click", function () {
+        const links = Array.from(fileList.querySelectorAll(".file-link"));
+        links.sort(function (a, b) {
+          const aCount = Number.parseInt(a.getAttribute("data-backlinks") || "0", 10);
+          const bCount = Number.parseInt(b.getAttribute("data-backlinks") || "0", 10);
+          if (aCount !== bCount) {
+            return bCount - aCount;
+          }
+          const aKey = a.getAttribute("data-search") || "";
+          const bKey = b.getAttribute("data-search") || "";
+          return aKey.localeCompare(bKey);
+        });
+        reorderLinks(links);
+      });
+
+      sortCreatedBtn.addEventListener("click", function () {
+        const links = Array.from(fileList.querySelectorAll(".file-link"));
+        links.sort(function (a, b) {
+          const aRaw = a.getAttribute("data-created-ts") || "";
+          const bRaw = b.getAttribute("data-created-ts") || "";
+          const aMissing = aRaw === "";
+          const bMissing = bRaw === "";
+          if (aMissing && !bMissing) {
+            return -1;
+          }
+          if (!aMissing && bMissing) {
+            return 1;
+          }
+          if (!aMissing && !bMissing) {
+            const aTs = Number.parseInt(aRaw, 10);
+            const bTs = Number.parseInt(bRaw, 10);
+            if (aTs !== bTs) {
+              return aTs - bTs;
+            }
+          }
+          const aKey = a.getAttribute("data-search") || "";
+          const bKey = b.getAttribute("data-search") || "";
+          return aKey.localeCompare(bKey);
+        });
+        reorderLinks(links);
+      });
+    })();
+  </script>
+</body>
+</html>

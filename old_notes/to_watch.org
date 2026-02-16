@@ -1,0 +1,84 @@
+:PROPERTIES:
+:ID:       f2db82e0-c545-40fe-9458-55f8fe1bcb4b
+:END:
+#+title: To Watch
+[2023-05-07 Sun 22:59]
+
+* To Watch
+
+** TODO Watch "Das Boot"
+   [2023-06-19 Mon 14:46]
+
+** TODO Watch "Eternal Sunshine of the Spotless Mind"
+   [2023-06-21 Wed 16:15]
+
+** TODO Watch "In the mood for love"
+   [2023-09-09 Sat 21:06]
+
+** TODO Watch "Isle of Dogs"
+   [2023-09-30 Sat 10:20]
+
+** TODO Watch "Whisper of the Heart"
+   [2023-10-15 Sun 18:50]
+
+** TODO Watch "Kiki's delivery service"
+   [2023-10-15 Sun 18:50]
+
+** TODO Watch netflix "Life" documentary
+   [2023-11-07 Tue 10:11]
+
+** TODO Watch "Pirates of the Carribean"
+   [2023-12-31 Sun 17:51]
+
+** TODO Watch "Good Will Hunting"
+   [2024-01-05 Fri 11:32]
+
+** TODO Watch "Ben Hur"
+   [2024-01-29 Mon 19:51]
+
+** TODO Watch "Office Space"
+   [2024-02-04 Sun 13:00]
+
+** TODO Watch a Hitchcock movie
+   [2024-03-20 Wed 21:01]
+
+** TODO Watch "the edge"
+   [2024-05-04 Sat 11:20]
+
+** TODO Watch "Monk"
+   [2024-05-21 Tue 15:48]
+
+** TODO Watch "Taxi Driver"
+   [2024-06-07 Fri 11:26]
+
+** TODO Watch "Ranking of Kings"
+   [2024-06-10 Mon 20:06]
+
+** TODO Watch "Mushi-shi"
+   [2024-06-27 Thu 08:10]
+
+** TODO Watch "secret level" on prime
+   [2025-02-02 Sun 22:19]
+
+** TODO Watch "The Fugitive"
+   [2025-06-23 Mon 10:18]
+
+** TODO Watch "Castle in the Sky"
+   [2025-06-23 Mon 10:20]
+
+** TODO Watch "Grave of the fireflies"
+   [2025-06-23 Mon 10:20]
+
+** TODO Watch "Christmas Fury"
+   [2025-11-24 Mon 17:14]
+
+** TODO Watch White Fang
+   [2025-12-29 Mon 15:24]
+   https://www.imdb.com/title/tt5222768/
+** DONE Watch Jurassic Park
+   CLOSED: [2026-02-15 Sun 22:28]
+   [2026-01-26 Mon 17:56]
+
+** TODO Watch "Hackers"
+   [2026-02-15 Sun 22:28]
+

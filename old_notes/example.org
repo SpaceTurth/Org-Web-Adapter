@@ -1,0 +1,19 @@
+#+TITLE: Example Notes
+#+AUTHOR: Org Web Adapter Stuff
+
+* Today
+- Build a tiny server to browse Org files.
+- Make sure it works on mobile.
+
+* Ideas
+** Reader Mode
+Show a clean layout with headings and content.
+
+** Next Step
+Add editing endpoints and save-back support.
+Related list: [[file:to_watch.org][To Watch]]
+Related by ID: [[id:f2db82e0-c545-40fe-9458-55f8fe1bcb4b][To Watch (ID)]]
+
+* Scratch
+This paragraph demonstrates normal text.
+A second line stays as plain text for now.
