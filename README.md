@@ -8,6 +8,8 @@ The app is implemented as a single Python server (`main.py`) plus one HTML templ
 - center pane: note content (preview or edit)
 - right sidebar: backlinks to the current note
 
+⚠ There is no authentication or encryption, only run this service on trusted networks. ⚠
+
 ## Screenshots
 
 ### Desktop
