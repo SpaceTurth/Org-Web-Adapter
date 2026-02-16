@@ -8,9 +8,22 @@ The app is implemented as a single Python server (`main.py`) plus one HTML templ
 - center pane: note content (preview or edit)
 - right sidebar: backlinks to the current note
 
-## Architecture
+## Screenshots
 
-### High-level flow
+### Desktop
+
+![Desktop view](media/desktop.png)
+
+### Mobile
+
+![Mobile view](media/mobile.png)
+
+## Instructions
+1. Symlink your notes directory to `notes`.
+2. Edit the bind address and port in `config.yaml` if desired.
+3. `python3 main.py`.
+
+## How's it work?
 
 1. `main.py` starts an HTTP server.
 2. On each page request (`GET /`), it rescans the notes directory for `.org` files.
@@ -21,7 +34,7 @@ The app is implemented as a single Python server (`main.py`) plus one HTML templ
    - `{{BACKLINKS}}`
 5. Browser JS in `templates/index.html` handles client-side interactions (search, shuffle, sorting, jump-to-current, theme toggle).
 
-### Server-side components (`main.py`)
+## Server-side components (`main.py`)
 
 - File discovery and parsing:
   - `scan_org_files(...)` recursively finds `.org` files.
@@ -39,7 +52,7 @@ The app is implemented as a single Python server (`main.py`) plus one HTML templ
 - Static files:
   - `serve_static(...)` serves files under `static/` with path traversal protection.
 
-### Frontend components
+## Frontend components
 
 - `templates/index.html`:
   - Base layout markup.
@@ -55,15 +68,6 @@ The app is implemented as a single Python server (`main.py`) plus one HTML templ
 
 Startup config is read from `config.yaml` by default.
 
-Current config:
-
-```yaml
-bind_addr: 10.54.0.3
-bind_port: 8001
-```
-
-Supported keys:
-
 - `bind_addr`: host/IP to bind
 - `bind_port`: TCP port (must be `1..65535`)
 
@@ -73,15 +77,7 @@ Notes:
 - CLI flags `--host` and `--port` override config values.
 - You can choose a different config file with `--config /path/to/config.yaml`.
 
-## Running
-
-Basic run:
-
-```bash
-python3 main.py
-```
-
-Useful options:
+## Useful run commands
 
 ```bash
 python3 main.py --dir notes
@@ -142,5 +138,3 @@ python3 main.py --no-browser
 - Not a full Org parser; rendering is intentionally simple.
 - Notes are rescanned on each request (simple and fresh, but not optimized for huge note sets).
 - Math rendering depends on loading MathJax from CDN.
-
-codex resume 019c650e-61d5-73c0-82b6-9872fba7c71e
