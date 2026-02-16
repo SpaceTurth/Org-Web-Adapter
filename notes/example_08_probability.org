@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       2e8a8baf-7a15-4e6f-97d2-7f93e73e0108
+:END:
+#+TITLE: Probability
+#+CREATED: [2026-02-01 Sun 11:20]
+
+* Probability
+Math: $P(A \mid B)=\frac{P(A\cap B)}{P(B)}$.
+
+Links:
+- [[file:example_10_physics_notes.org][Physics Notes]]
+- [[file:example_11_machine_learning.org][Machine Learning]]
+- [[id:2e8a8baf-7a15-4e6f-97d2-7f93e73e0107][Number Theory by ID]]

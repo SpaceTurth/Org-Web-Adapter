@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       2e8a8baf-7a15-4e6f-97d2-7f93e73e0109
+:END:
+#+TITLE: Graph Models
+#+CREATED: [2026-02-01 Sun 11:40]
+
+* Graph Models
+Math: $|E| \leq \binom{|V|}{2}$ for simple undirected graphs.
+
+Links:
+- [[file:example_03_linear_algebra.org][Linear Algebra]]
+- [[file:example_12_review_checklist.org][Review Checklist]]
+- [[file:example_08_probability.org][Probability]]

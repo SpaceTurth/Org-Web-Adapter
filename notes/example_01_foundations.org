@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       2e8a8baf-7a15-4e6f-97d2-7f93e73e0101
+:END:
+#+TITLE: Foundations
+#+CREATED: [2026-02-01 Sun 09:00]
+
+* Foundations
+This note introduces the set.
+Math: $a^2 + b^2 = c^2$.
+
+Links:
+- [[file:example_02_calculus.org][Calculus Basics]]
+- [[file:example_03_linear_algebra.org][Linear Algebra]]
+- [[id:2e8a8baf-7a15-4e6f-97d2-7f93e73e0112][Review Checklist]]

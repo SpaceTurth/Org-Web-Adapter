@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       2e8a8baf-7a15-4e6f-97d2-7f93e73e0110
+:END:
+#+TITLE: Physics Notes
+#+CREATED: [2026-02-01 Sun 12:00]
+
+* Physics Notes
+Math: $F=ma$ and $E=mc^2$.
+
+Links:
+- [[file:example_04_series.org][Series and Convergence]]
+- [[file:example_08_probability.org][Probability]]
+- [[file:example_11_machine_learning.org][Machine Learning]]

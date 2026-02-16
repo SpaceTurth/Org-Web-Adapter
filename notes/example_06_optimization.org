@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       2e8a8baf-7a15-4e6f-97d2-7f93e73e0106
+:END:
+#+TITLE: Optimization
+#+CREATED: [2026-02-01 Sun 10:40]
+
+* Optimization
+Math: $\nabla f(x)=0$ at critical points.
+
+Links:
+- [[file:example_05_eigenvalues.org][Eigenvalues]]
+- [[file:example_11_machine_learning.org][Machine Learning]]
+- [[file:example_12_review_checklist.org][Review Checklist]]

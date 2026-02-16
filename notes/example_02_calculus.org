@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       2e8a8baf-7a15-4e6f-97d2-7f93e73e0102
+:END:
+#+TITLE: Calculus Basics
+#+CREATED: [2026-02-01 Sun 09:20]
+
+* Calculus Basics
+Math: $\frac{d}{dx}x^n = nx^{n-1}$.
+
+Links:
+- [[file:example_04_series.org][Series and Convergence]]
+- [[file:example_08_probability.org][Probability]]
+- [[file:example_01_foundations.org][Foundations]]

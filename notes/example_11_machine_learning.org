@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       2e8a8baf-7a15-4e6f-97d2-7f93e73e0111
+:END:
+#+TITLE: Machine Learning
+#+CREATED: [2026-02-01 Sun 12:20]
+
+* Machine Learning
+Math: $\hat{y}=\sigma(\mathbf{w}^T\mathbf{x}+b)$.
+
+Links:
+- [[file:example_06_optimization.org][Optimization]]
+- [[file:example_05_eigenvalues.org][Eigenvalues]]
+- [[file:example_12_review_checklist.org][Review Checklist]]

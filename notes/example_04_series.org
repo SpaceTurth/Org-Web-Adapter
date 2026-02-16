@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       2e8a8baf-7a15-4e6f-97d2-7f93e73e0104
+:END:
+#+TITLE: Series and Convergence
+#+CREATED: [2026-02-01 Sun 10:00]
+
+* Series and Convergence
+Math: $\sum_{k=0}^{\infty} r^k = \frac{1}{1-r}$ for $|r|<1$.
+
+Links:
+- [[file:example_02_calculus.org][Calculus Basics]]
+- [[file:example_06_optimization.org][Optimization]]
+- [[file:example_10_physics_notes.org][Physics Notes]]

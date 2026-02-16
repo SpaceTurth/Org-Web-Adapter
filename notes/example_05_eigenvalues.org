@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       2e8a8baf-7a15-4e6f-97d2-7f93e73e0105
+:END:
+#+TITLE: Eigenvalues
+#+CREATED: [2026-02-01 Sun 10:20]
+
+* Eigenvalues
+Math: $A\vec{v}=\lambda\vec{v}$.
+
+Links:
+- [[file:example_03_linear_algebra.org][Linear Algebra]]
+- [[file:example_06_optimization.org][Optimization]]
+- [[file:example_11_machine_learning.org][Machine Learning]]

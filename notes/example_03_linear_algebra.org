@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       2e8a8baf-7a15-4e6f-97d2-7f93e73e0103
+:END:
+#+TITLE: Linear Algebra
+#+CREATED: [2026-02-01 Sun 09:40]
+
+* Linear Algebra
+Math: $A\vec{x}=\vec{b}$ and $\det(A) \neq 0$.
+
+Links:
+- [[file:example_05_eigenvalues.org][Eigenvalues]]
+- [[file:example_09_graphs.org][Graph Models]]
+- [[id:2e8a8baf-7a15-4e6f-97d2-7f93e73e0101][Foundations by ID]]
