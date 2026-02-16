@@ -2,11 +2,7 @@
 
 A lightweight local web app for browsing and editing Org files.
 
-The app is implemented as a single Python server (`main.py`) plus one HTML template (`templates/index.html`) and one stylesheet (`static/style.css`). It scans a notes directory for `.org` files and renders a 3-pane UI:
-
-- left sidebar: note list + search/sort controls
-- center pane: note content (preview or edit)
-- right sidebar: backlinks to the current note
+The app is implemented as a single Python server (`main.py`) plus one HTML template (`templates/index.html`) and one stylesheet (`static/style.css`). It scans a notes directory for `.org` files and renders a 3-pane UI.
 
 ⚠️ There is no authentication or encryption, only run this service on trusted networks. ⚠️
 
