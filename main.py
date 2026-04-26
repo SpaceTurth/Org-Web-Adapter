@@ -45,7 +45,7 @@ def scan_org_files(base_dir: Path) -> list[OrgFile]:
         dirs[:] = [d for d in dirs if d not in {".git", ".venv", "venv", "__pycache__"}]
         root_path = Path(root)
         for filename in files:
-            if filename.lower().endswith(".org"):
+            if "#" not in filename and filename.lower().endswith(".org"):
                 file_path = root_path / filename
                 try:
                     content = file_path.read_text(encoding="utf-8")
@@ -325,7 +325,7 @@ def build_index_page(
         for f in org_files:
             active = "active" if f.relative_path == selected.relative_path else ""
             safe_href = html.escape(note_href(f.relative_path, False), quote=True)
-            safe_title = html.escape(truncate_label(f.title))
+            safe_title = html.escape(f.title)
             safe_path = html.escape(truncate_label(f.relative_path))
             full_title = html.escape(f.title, quote=True)
             full_path = html.escape(f.relative_path, quote=True)
@@ -357,7 +357,7 @@ def build_index_page(
             backlink_items = []
             for source in backlinks:
                 safe_href = html.escape(note_href(source.relative_path, edit_mode), quote=True)
-                safe_title = html.escape(truncate_label(source.title))
+                safe_title = html.escape(source.title)
                 safe_path = html.escape(truncate_label(source.relative_path))
                 full_title = html.escape(source.title, quote=True)
                 full_path = html.escape(source.relative_path, quote=True)
