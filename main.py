@@ -270,10 +270,29 @@ def render_org_to_html(
 ) -> str:
     """Very small org-ish renderer: headings become section titles, body keeps line breaks."""
     html_lines: list[str] = []
+    in_code_block = False
+    code_lines: list[str] = []
 
     for raw_line in content.splitlines():
         line = raw_line.rstrip("\n")
         stripped = line.lstrip()
+
+        if stripped.upper().startswith("#+BEGIN_SRC"):
+            in_code_block = True
+            code_lines = []
+            continue
+
+        if stripped.upper().startswith("#+END_SRC"):
+            if in_code_block:
+                in_code_block = False
+                code_content = "\n".join(code_lines)
+                safe_code = html.escape(code_content)
+                html_lines.append(f"<pre><code class='code-block'>{safe_code}</code></pre>")
+            continue
+
+        if in_code_block:
+            code_lines.append(line)
+            continue
 
         if stripped.startswith("*"):
             stars = len(stripped) - len(stripped.lstrip("*"))
